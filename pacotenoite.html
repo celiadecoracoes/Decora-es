@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pacotes Premium • Celia Decorações</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/pt.js" defer></script>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --azul:#8fe8ff;
+    --azul2:#5bcdf0;
+    --azul3:#2f7ee8;
+    --azul-profundo:#0a2a5e;
+    --verde:#89ffe3;
+    --escuro:#040611;
+    --escuro2:#0c1330;
+    --dourado:#ffe08c;
+    --branco:#ffffff;
+    --nebulosa:rgba(47,126,232,.16);
+}
+
+/* Trava a rolagem horizontal: impede que qualquer elemento
+   posicionado fora da tela arraste a página inteira pros lados. */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+    radial-gradient(1.5px 1.5px at 20% 15%, rgba(255,255,255,.55), transparent),
+    radial-gradient(1.5px 1.5px at 65% 8%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1px 1px at 80% 25%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1.5px 1.5px at 35% 40%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,.45), transparent),
+    radial-gradient(1.5px 1.5px at 10% 70%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1px 1px at 55% 85%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1.5px 1.5px at 45% 92%, rgba(255,255,255,.3), transparent),
+    radial-gradient(circle at top right, rgba(47,126,232,.22), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(137,255,227,.10), transparent 30%),
+    radial-gradient(circle at 50% 0%, rgba(91,205,240,.14), transparent 45%),
+    linear-gradient(180deg,#020309 0%,#050a1a 40%,#081130 75%,#0a1638 100%);
+    background-attachment:fixed;
+    color:white;
+    overflow-x:hidden;
+    width: 100%;
+    position:relative;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background:
+    radial-gradient(1px 1px at 25% 30%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1px 1px at 70% 50%, rgba(255,255,255,.3), transparent),
+    radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,.3), transparent),
+    radial-gradient(1px 1px at 85% 90%, rgba(255,255,255,.35), transparent);
+    animation:cintilar 5s ease-in-out infinite alternate;
+}
+
+@keyframes cintilar{
+    0%{opacity:.4;}
+    100%{opacity:1;}
+}
+
+/* SCROLL */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:var(--escuro);
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(var(--azul3),var(--azul2));
+    border-radius:20px;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px 20px;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:var(--azul3);
+    filter:blur(190px);
+    opacity:.28;
+    top:-180px;
+    right:-120px;
+    animation:pulsar 8s ease-in-out infinite;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    width:550px;
+    height:550px;
+    background:var(--azul-profundo);
+    filter:blur(190px);
+    opacity:.35;
+    bottom:-180px;
+    left:-140px;
+    animation:pulsar 8s ease-in-out infinite 2s;
+}
+
+@keyframes pulsar{
+    0%,100%{opacity:.22; transform:scale(1);}
+    50%{opacity:.4; transform:scale(1.1);}
+}
+
+.hero-content{
+    max-width:1200px;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+    z-index:2;
+}
+
+.hero-text h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.hero-text h1 span{
+    background: linear-gradient(90deg, var(--azul), var(--azul3), var(--verde));
+    background-size:200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    filter:drop-shadow(0 0 25px rgba(91,205,240,.35));
+    animation:brilhoTexto 6s ease infinite;
+}
+
+@keyframes brilhoTexto{
+    0%{background-position:0% center;}
+    50%{background-position:100% center;}
+    100%{background-position:0% center;}
+}
+
+.hero-text p{
+    color:#d8d8d8;
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.hero-btns{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 28px;
+    border-radius:60px;
+    border:none;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--azul),var(--azul3));
+    color:#04101f;
+    box-shadow:0 0 30px rgba(47,126,232,.5);
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px) scale(1.03);
+    box-shadow:0 0 45px rgba(47,126,232,.7);
+}
+
+.btn-secondary{
+    border:1px solid rgba(143,232,255,.2);
+    color:white;
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(10px);
+}
+
+.btn-secondary:hover{
+    background:rgba(143,232,255,.1);
+    border-color:rgba(143,232,255,.4);
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-image::before{
+    content:'';
+    position:absolute;
+    inset:-2px;
+    border-radius:37px;
+    background:linear-gradient(135deg,var(--azul),var(--azul3),var(--verde));
+    opacity:.5;
+    filter:blur(18px);
+    z-index:-1;
+}
+
+.hero-image img{
+    width:100%;
+    border-radius:35px;
+    border:1px solid rgba(143,232,255,.15);
+    box-shadow:0 0 60px rgba(4,10,30,.65);
+}
+
+/* TITULOS */
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title span{
+    color:var(--azul);
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:.9rem;
+    text-shadow:0 0 12px rgba(143,232,255,.5);
+}
+
+.section-title h2{
+    font-size:3rem;
+    margin-top:10px;
+    text-shadow:0 0 30px rgba(47,126,232,.25);
+}
+
+section{
+    padding:100px 20px;
+}
+
+/* GALERIA */
+
+.gallery{
+    max-width:1300px;
+    margin:auto;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.gallery-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:30px;
+    background:rgba(10,20,45,.35);
+    border:1px solid rgba(143,232,255,.1);
+    transition:.5s;
+}
+
+.gallery-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(143,232,255,.35);
+    box-shadow:0 15px 45px rgba(4,10,30,.6), 0 0 30px rgba(47,126,232,.25);
+}
+
+.gallery-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.8s;
+    cursor:pointer;
+}
+
+.gallery-card:hover img{
+    transform:scale(1.08);
+}
+
+.gallery-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,.9), transparent 60%);
+    display:flex;
+    align-items:flex-end;
+    padding:25px;
+    pointer-events:none;
+}
+
+.gallery-overlay h3{
+    font-size:1.3rem;
+}
+
+/* INFOS */
+
+.info-container{
+    max-width:1250px;
+    margin:auto;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.info-card{
+    background:linear-gradient(160deg,rgba(20,35,70,.5),rgba(6,12,28,.6));
+    border:1px solid rgba(143,232,255,.1);
+    border-radius:28px;
+    padding:30px;
+    backdrop-filter:blur(15px);
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.info-card::before{
+    content:'';
+    position:absolute;
+    width:130px;
+    height:130px;
+    background:rgba(47,126,232,.22);
+    filter:blur(10px);
+    border-radius:50%;
+    top:-40px;
+    right:-40px;
+}
+
+.info-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(143,232,255,.45);
+    box-shadow:0 15px 40px rgba(4,10,30,.55), 0 0 25px rgba(47,126,232,.2);
+}
+
+.info-card h3{
+    margin-bottom:20px;
+    font-size:1.3rem;
+    color:var(--azul);
+}
+
+.info-card p{
+    line-height:1.8;
+    color:#d6d6d6;
+}
+
+/* PREÇOS */
+
+.pricing{
+    max-width:1250px;
+    margin:auto;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.price-card{
+    background:linear-gradient(180deg,rgba(22,38,75,.55),rgba(6,12,28,.65));
+    border-radius:35px;
+    padding:40px 30px;
+    border:1px solid rgba(143,232,255,.12);
+    position:relative;
+    overflow:hidden;
+    transition:.5s;
+}
+
+.price-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    border-color:rgba(143,232,255,.4);
+    box-shadow:0 20px 50px rgba(4,10,30,.6), 0 0 35px rgba(47,126,232,.3);
+}
+
+.price-card::before{
+    content:'';
+    position:absolute;
+    width:190px;
+    height:190px;
+    background:rgba(47,126,232,.25);
+    border-radius:50%;
+    top:-70px;
+    right:-70px;
+    filter:blur(25px);
+}
+
+.people{
+    color:var(--azul);
+    font-size:1.1rem;
+    font-weight:600;
+}
+
+.value{
+    font-size:2.5rem;
+    margin:15px 0;
+    font-weight:800;
+}
+
+.price-card ul{
+    list-style:none;
+    margin:25px 0;
+}
+
+.price-card ul li{
+    margin-bottom:12px;
+    color:#d8d8d8;
+}
+
+.whatsapp-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    padding:16px;
+    border-radius:18px;
+    border:none;
+    text-decoration:none;
+    background:linear-gradient(135deg,#1bd741,#0bb93d);
+    color:white;
+    font-weight:700;
+    font-family:'Poppins',sans-serif;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.whatsapp-btn:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 25px rgba(27,215,65,.4);
+}
+
+/* FINAL */
+
+.final-section{
+    position:relative;
+    text-align:center;
+    padding:140px 20px;
+    overflow:hidden;
+}
+
+.final-section::before{
+    content:'';
+    position:absolute;
+    width:800px;
+    height:800px;
+    background:radial-gradient(circle,var(--azul3),transparent 60%);
+    opacity:.14;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    animation:pulsar 10s ease-in-out infinite;
+}
+
+.final-content h2{
+    text-shadow:0 0 35px rgba(47,126,232,.3);
+}
+
+.final-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    margin:auto;
+}
+
+.final-content h2{
+    font-size:4rem;
+    margin-bottom:25px;
+}
+
+.final-content p{
+    font-size:1.2rem;
+    color:#d7d7d7;
+    line-height:2;
+    margin-bottom:40px;
+}
+
+/* FLOATING */
+
+.floating{
+    position:absolute;
+    border-radius:50%;
+    animation:float 6s infinite ease-in-out;
+    opacity:.25;
+}
+
+.floating{
+    filter:blur(2px);
+}
+
+.float1{
+    width:90px;
+    height:90px;
+    background:var(--azul3);
+    top:10%;
+    left:10%;
+}
+
+.float2{
+    width:140px;
+    height:140px;
+    background:var(--azul-profundo);
+    bottom:10%;
+    right:10%;
+    animation-delay:2s;
+    opacity:.4;
+}
+
+.float3{
+    width:50px;
+    height:50px;
+    background:var(--dourado);
+    bottom:20%;
+    left:15%;
+    animation-delay:1s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-25px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* RESPONSIVO */
+
+@media(max-width:950px){
+
+.hero-content{
+    grid-template-columns:1fr;
+}
+
+.hero-text{
+    text-align:center;
+}
+
+.hero-btns{
+    justify-content:center;
+}
+
+.hero-text h1{
+    font-size:3rem;
+}
+
+.section-title h2{
+    font-size:2.3rem;
+}
+
+.final-content h2{
+    font-size:2.7rem;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+    padding-top:120px;
+}
+
+.hero-text h1{
+    font-size:2.4rem;
+}
+
+.section-title h2{
+    font-size:2rem;
+}
+
+.value{
+    font-size:2rem;
+}
+
+.final-content h2{
+    font-size:2.2rem;
+}
+
+.final-content p{
+    font-size:1rem;
+}
+
+}
+
+/* LIGHTBOX DA GALERIA */
+
+.lightbox-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(3,6,14,.94);
+    backdrop-filter:blur(8px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+    padding:70px 20px 30px;
+    pointer-events:none;
+}
+
+.lightbox-overlay.ativo{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.lightbox-overlay img{
+    display:block;
+    max-width:min(900px,90vw);
+    max-height:80vh;
+    width:auto;
+    height:auto;
+    margin:auto;
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 0 60px rgba(0,0,0,.6);
+    transform:scale(.92);
+    transition:.35s;
+}
+
+.lightbox-overlay.ativo img{
+    transform:scale(1);
+}
+
+.lightbox-close{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(10,14,30,.85);
+    color:white;
+    font-size:1.4rem;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.3s;
+    z-index:10000;
+}
+
+.lightbox-close:hover{
+    background:linear-gradient(135deg,var(--azul),var(--verde));
+    color:#05111c;
+    transform:rotate(90deg);
+}
+
+@media (max-width:600px){
+
+    .lightbox-overlay{
+        padding:64px 12px 24px;
+    }
+
+    .lightbox-overlay img{
+        max-width:94vw;
+        max-height:76vh;
+        border-radius:16px;
+    }
+
+    .lightbox-close{
+        top:14px;
+        right:14px;
+        width:40px;
+        height:40px;
+        font-size:1.2rem;
+    }
+
+}
+
+/* MODAL - VERIFICAR DISPONIBILIDADE */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(3,6,14,.88);
+    backdrop-filter:blur(8px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+    padding:30px 15px;
+}
+
+.modal-overlay.ativo{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-box{
+    position:relative;
+    width:100%;
+    max-width:480px;
+    max-height:88vh;
+    overflow-y:auto;
+    background:linear-gradient(180deg,rgba(16,26,54,.98),rgba(5,9,20,.98));
+    border:1px solid rgba(143,232,255,.15);
+    border-radius:30px;
+    padding:40px 35px;
+    transform:translateY(30px) scale(.96);
+    transition:.35s;
+    box-shadow:0 25px 70px rgba(2,5,15,.7), 0 0 40px rgba(47,126,232,.15);
+}
+
+.modal-overlay.ativo .modal-box{
+    transform:translateY(0) scale(1);
+}
+
+.modal-close{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.06);
+    color:white;
+    font-size:1.3rem;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.modal-close:hover{
+    background:linear-gradient(135deg,var(--azul),var(--verde));
+    color:#05111c;
+    transform:rotate(90deg);
+}
+
+.modal-box h3{
+    font-size:1.6rem;
+    margin-bottom:6px;
+}
+
+.modal-pacote-info{
+    color:var(--azul);
+    font-weight:600;
+    margin-bottom:28px;
+    font-size:.95rem;
+    letter-spacing:.5px;
+}
+
+.campo{
+    margin-bottom:20px;
+}
+
+.campo label{
+    display:block;
+    margin-bottom:8px;
+    font-size:.9rem;
+    color:#d8d8d8;
+    font-weight:500;
+}
+
+.campo input{
+    width:100%;
+    padding:14px 16px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.05);
+    color:white;
+    font-family:'Poppins',sans-serif;
+    font-size:.95rem;
+    outline:none;
+    transition:.3s;
+}
+
+.campo input::placeholder{
+    color:rgba(255,255,255,.35);
+}
+
+.campo input:focus{
+    border-color:var(--azul);
+    background:rgba(255,255,255,.08);
+    box-shadow:0 0 0 3px rgba(143,232,255,.15);
+}
+
+.modal-aviso{
+    font-size:.8rem;
+    color:rgba(255,255,255,.5);
+    margin:-10px 0 22px;
+    line-height:1.6;
+}
+
+.modal-submit{
+    width:100%;
+    padding:16px;
+    border-radius:18px;
+    border:none;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:1rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:linear-gradient(135deg,#1bd741,#0bb93d);
+    color:white;
+    transition:.4s;
+}
+
+.modal-submit:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 25px rgba(27,215,65,.4);
+}
+
+/* AJUSTES FLATPICKR PARA O TEMA ESCURO */
+
+.flatpickr-calendar{
+    background:#0a1226 !important;
+    border:1px solid rgba(143,232,255,.15) !important;
+    box-shadow:0 10px 40px rgba(2,5,15,.6), 0 0 25px rgba(47,126,232,.15) !important;
+    font-family:'Poppins',sans-serif !important;
+}
+
+.flatpickr-months .flatpickr-month,
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-weekdays{
+    background:#0a1226 !important;
+    color:white !important;
+    fill:white !important;
+}
+
+.flatpickr-current-month input.cur-year{
+    color:white !important;
+}
+
+span.flatpickr-weekday{
+    color:var(--azul) !important;
+}
+
+.flatpickr-day{
+    color:#e5e5e5 !important;
+}
+
+.flatpickr-day.flatpickr-disabled{
+    color:rgba(255,255,255,.18) !important;
+}
+
+.flatpickr-day.today{
+    border-color:var(--azul) !important;
+}
+
+.flatpickr-day:hover{
+    background:rgba(143,232,255,.18) !important;
+}
+
+.flatpickr-day.selected{
+    background:linear-gradient(135deg,var(--azul),var(--verde)) !important;
+    border-color:transparent !important;
+    color:#05111c !important;
+    font-weight:700;
+}
+
+.flatpickr-prev-month, .flatpickr-next-month{
+    fill:white !important;
+    color:white !important;
+}
+</style>
+<!-- ══════════ PWA — INSTALAÇÃO COMO APLICATIVO ══════════ -->
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="./produtos/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./produtos/favicon-16x16.png">
+<link rel="apple-touch-icon" href="./produtos/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Celia Decorações">
+</head>
+
+<body>
+<script src="./pwa-install.js" defer></script>
+<script src="./nav-history.js"></script>
+
+<div class="floating float1"></div>
+<div class="floating float2"></div>
+<div class="floating float3"></div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-text">
+<h1>
+    <span>PACOTE NOITE</span> <br> <br>
+Celebre Momentos <span>Inesquecíveis</span>
+</h1>
+
+<p>
+Transformamos aniversários em experiências mágicas, elegantes e inesquecíveis.
+Cada detalhe foi pensado para criar um ambiente sofisticado, acolhedor e cheio de diversão para toda a família.
+</p>
+
+<div class="hero-btns">
+
+
+</div>
+
+</div>
+
+<div class="hero-image">
+<img src="./produtos/piscinanoite.jpeg" alt="Espaço Celia Decorações">
+</div>
+
+</div>
+
+</section>
+
+<!-- GALERIA -->
+
+<section id="galeria">
+
+<div class="gallery">
+
+<div class="section-title">
+<span>Momentos especiais</span>
+<h2>Nosso Espaço Premium</h2>
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-card">
+<img src="./produtos/Decoração principal222.jfif" alt="Decoração Principal" onclick="abrirLightbox(this.src, this.alt)">
+<div class="gallery-overlay">
+<h3>Decoração Principal</h3>
+</div>
+</div>
+
+<div class="gallery-card">
+<img src="./produtos/Cantinho de foto222.jfif" alt="Cantinho Decorado" onclick="abrirLightbox(this.src, this.alt)">
+<div class="gallery-overlay">
+<h3>Cantinho Decorado & Lembrancinhas</h3>
+</div>
+</div>
+
+<div class="gallery-card">
+<img src="./produtos/mesas e cadeiras222.jfif" alt="Mesas e cadeiras" onclick="abrirLightbox(this.src, this.alt)">
+<div class="gallery-overlay">
+<h3>Mesas Organizadas com Elegância</h3>
+</div>
+</div>
+
+<div class="gallery-card">
+<img src="./produtos/playgroud1.png" alt="Piscina" onclick="abrirLightbox(this.src, this.alt)">
+<div class="gallery-overlay">
+<h3>Área de Lazer & Diversão</h3>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- INFORMAÇÕES -->
+
+<section>
+
+<div class="info-container">
+
+<div class="section-title">
+<span>O que está incluso</span>
+<h2>Pacote Noite</h2>
+</div>
+
+<div class="info-grid">
+
+<div class="info-card">
+<h3>Espaço Completo</h3>
+<p>
+Fogão industrial, freezer, gelágua, pratos, talheres, taças, churrasqueira, sinuca e 2 banheiros.
+No pacote noite não é permitido banho de piscina.
+Mais informações diretamente no WhatsApp.
+</p>
+</div>
+
+<div class="info-card">
+<h3>Decoração Completa</h3>
+<p>
+Mesa do bolo, cantinho decorado, entrada personalizada, cesto de presentes, cantinho de fotos com nome 3D e espaço das lembrancinhas.
+Tudo decorado com balões elegantes e acabamento profissional.
+</p>
+</div>
+
+<div class="info-card">
+<h3>Mesas & Organização</h3>
+<p>
+Organização completa das mesas e cadeiras com toalhas sofisticadas e centros de mesas decorativos, trazendo mais charme e elegância para sua festa.
+</p>
+</div>
+
+<div class="info-card">
+<h3>Diversões</h3>
+<p>
+Cama elástica e playground infantil para garantir a diversão das crianças durante toda a comemoração.
+</p>
+</div>
+
+<div class="info-card">
+<h3>Guloseimas</h3>
+<p>
+Pipoqueira e algodão doce com monitores inclusos para deixar a experiência ainda mais especial e divertida.
+</p>
+</div>
+
+<div class="info-card">
+<h3>Mimos Semi-Luxo</h3>
+<p>
+50 unidades de mimos semi-luxo cheios.
+Parceria especial com ML Mimos, trazendo lembranças encantadoras e sofisticadas.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PACOTES -->
+
+<section id="pacotes">
+
+<div class="pricing">
+
+<div class="section-title">
+<span>Escolha seu pacote</span>
+<h2>Valores Promocionais</h2>
+</div>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<div class="people">40 Pessoas</div>
+
+<div class="value">R$ 1.450</div>
+
+<ul>
+<li>✔ Decoração Completa</li>
+<li>✔ Espaço Premium</li>
+<li>✔ Mesas Organizadas</li>
+<li>✔ Playground & Cama Elástica</li>
+<li>✔ Guloseimas Inclusas</li>
+</ul>
+
+<button type="button" class="whatsapp-btn" onclick="abrirModalDisponibilidade(40, 'R$ 1.450')">
+✅ Verificar Disponibilidade
+</button>
+
+</div>
+
+<div class="price-card">
+
+<div class="people">60 Pessoas</div>
+
+<div class="value">R$ 1.650</div>
+
+<ul>
+<li>✔ Decoração Completa</li>
+<li>✔ Espaço Premium</li>
+<li>✔ Guloseimas Inclusas</li>
+<li>✔ Playground & Diversão</li>
+<li>✔ Ambiente Elegante</li>
+</ul>
+
+<button type="button" class="whatsapp-btn" onclick="abrirModalDisponibilidade(60, 'R$ 1.650')">
+✅ Verificar Disponibilidade
+</button>
+
+</div>
+
+<div class="price-card">
+
+<div class="people">80 Pessoas</div>
+
+<div class="value">R$ 1.900</div>
+
+<ul>
+<li>✔ 100 Mimos Semi-Luxo Cheios</li>
+<li>✔ Decoração Premium</li>
+<li>✔ Espaço Completo</li>
+<li>✔ Mesas Decoradas</li>
+<li>✔ Diversão Garantida</li>
+</ul>
+
+<button type="button" class="whatsapp-btn" onclick="abrirModalDisponibilidade(80, 'R$ 1.900')">
+✅ Verificar Disponibilidade
+</button>
+
+</div>
+
+<div class="price-card">
+
+<div class="people">100 Pessoas</div>
+
+<div class="value">R$ 2.100</div>
+
+<ul>
+<li>✔ 100 Mimos Semi-Luxo Cheios</li>
+<li>✔ Estrutura Completa</li>
+<li>✔ Decoração Elegante</li>
+<li>✔ Guloseimas Inclusas</li>
+<li>✔ Ambiente Premium</li>
+</ul>
+
+<button type="button" class="whatsapp-btn" onclick="abrirModalDisponibilidade(100, 'R$ 2.100')">
+✅ Verificar Disponibilidade
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final-section">
+
+<div class="final-content">
+
+<h2>
+Seu Evento Merece Algo Extraordinário
+</h2>
+
+<p>
+Cada detalhe foi criado para proporcionar uma experiência encantadora, sofisticada e memorável.
+Da decoração aos momentos especiais com sua família, tudo foi pensado para transformar sonhos em realidade.
+</p>
+
+<a href="./telainicial.html" class="btn btn-primary">
+⬅ Voltar para Tela Inicial
+</a>
+
+</div>
+
+</section>
+
+<!-- LIGHTBOX DA GALERIA -->
+
+<div class="lightbox-overlay" id="lightboxOverlay" onclick="if(event.target===this) fecharLightbox()">
+<button type="button" class="lightbox-close" onclick="fecharLightbox()" aria-label="Fechar">✕</button>
+<img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- MODAL VERIFICAR DISPONIBILIDADE -->
+
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this) fecharModal()">
+<div class="modal-box">
+
+<button type="button" class="modal-close" onclick="fecharModal()" aria-label="Fechar">✕</button>
+
+<h3>Verificar Disponibilidade</h3>
+<div class="modal-pacote-info" id="modalPacoteInfo"></div>
+
+<form id="formDisponibilidade">
+
+<div class="campo">
+<label for="inputTema">Tema da festa</label>
+<input type="text" id="inputTema" placeholder="Ex: Safári, Princesas, Super-Heróis..." required>
+</div>
+
+<div class="campo">
+<label for="inputNome">Nome do(a) aniversariante</label>
+<input type="text" id="inputNome" placeholder="Ex: Maria" required>
+</div>
+
+<div class="campo">
+<label for="inputIdade">Idade do(a) aniversariante</label>
+<input type="number" id="inputIdade" min="0" max="120" placeholder="Ex: 5" required>
+</div>
+
+<div class="campo">
+<label for="inputData">Data do evento</label>
+<input type="text" id="inputData" placeholder="Selecione a data" autocomplete="off" required>
+</div>
+
+<p class="modal-aviso">
+📌 Datas disponíveis a partir de 5 dias corridos da data de hoje, para organização do evento.<br>
+📌 O período de 2027 só abre para reservas a partir de 1º de dezembro.
+</p>
+
+<button type="submit" class="modal-submit">💬 Enviar no WhatsApp</button>
+
+</form>
+
+</div>
+</div>
+
+<script>
+
+// EFEITO REVELAR
+
+const cards = document.querySelectorAll('.gallery-card, .info-card, .price-card');
+
+window.addEventListener('scroll', ()=>{
+
+cards.forEach(card=>{
+
+const top = card.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+card.style.opacity = "1";
+card.style.transform = "translateY(0)";
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+card.style.opacity = "0";
+card.style.transform = "translateY(50px)";
+card.style.transition = ".8s";
+});
+
+// ==============================
+// LIGHTBOX DA GALERIA
+// ==============================
+
+function abrirLightbox(src, alt){
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxImg').alt = alt;
+    document.getElementById('lightboxOverlay').classList.add('ativo');
+    document.body.style.overflow = 'hidden';
+}
+
+function fecharLightbox(){
+    document.getElementById('lightboxOverlay').classList.remove('ativo');
+    document.body.style.overflow = '';
+}
+
+// ==============================
+// MODAL - VERIFICAR DISPONIBILIDADE
+// ==============================
+
+let pacoteSelecionado = { pessoas: '', valor: '' };
+let calendarioEvento = null;
+
+function abrirModalDisponibilidade(pessoas, valor){
+    pacoteSelecionado = { pessoas, valor };
+    document.getElementById('modalPacoteInfo').textContent = 'Pacote de ' + pessoas + ' pessoas — ' + valor;
+    document.getElementById('formDisponibilidade').reset();
+    document.getElementById('modalOverlay').classList.add('ativo');
+    document.body.style.overflow = 'hidden';
+    if(calendarioEvento){
+        calendarioEvento.clear();
+    }
+}
+
+function fecharModal(){
+    document.getElementById('modalOverlay').classList.remove('ativo');
+    document.body.style.overflow = '';
+}
+
+// Fecha lightbox ou modal com a tecla ESC
+document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape'){
+        fecharLightbox();
+        fecharModal();
+    }
+});
+
+// Configuração do calendário (flatpickr)
+// - Datas liberadas somente a partir de 5 dias corridos a partir de hoje
+// - O ano de 2027 fica bloqueado até 1º de dezembro de 2027
+window.addEventListener('DOMContentLoaded', ()=>{
+
+    const hoje = new Date();
+    const dataMinima = new Date(hoje);
+    dataMinima.setDate(hoje.getDate() + 5);
+
+    calendarioEvento = flatpickr('#inputData', {
+        locale: 'pt',
+        dateFormat: 'd/m/Y',
+        minDate: dataMinima,
+        disable: [
+            {
+                from: '2027-01-01',
+                to: '2027-11-30'
+            }
+        ],
+        disableMobile: true
+    });
+
+});
+
+// Envio do formulário para o WhatsApp com todos os dados preenchidos
+document.getElementById('formDisponibilidade').addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    const tema = document.getElementById('inputTema').value.trim();
+    const nome = document.getElementById('inputNome').value.trim();
+    const idade = document.getElementById('inputIdade').value.trim();
+    const data = document.getElementById('inputData').value.trim();
+
+    if(!tema || !nome || !idade || !data){
+        alert('Por favor, preencha todos os campos antes de continuar.');
+        return;
+    }
+
+    const mensagem =
+'Olá Celia Decorações! Gostaria de verificar disponibilidade para o pacote de ' + pacoteSelecionado.pessoas + ' pessoas (' + pacoteSelecionado.valor + ').\n\n' +
+'🎉 Tema da festa: ' + tema + '\n' +
+'🎂 Aniversariante: ' + nome + '\n' +
+'🎈 Idade: ' + idade + ' anos\n' +
+'📅 Data do evento: ' + data + '\n\n' +
+'Aguardo a confirmação de disponibilidade!';
+
+    const url = 'https://wa.me/5585988376171?text=' + encodeURIComponent(mensagem);
+
+    window.open(url, '_blank');
+    fecharModal();
+
+});
+
+</script>
+
+<script>
+/* ── Botão físico/gesto de voltar do celular ──
+   Registra o lightbox e o modal de disponibilidade como overlays: se
+   algum estiver aberto, o voltar apenas o fecha. O restante é tratado
+   pelo nav-history.js. */
+if (window.CDNavHistory) {
+  window.CDNavHistory.registerOverlay(
+    function () { return document.getElementById('lightboxOverlay').classList.contains('ativo'); },
+    function () { fecharLightbox(); }
+  );
+  window.CDNavHistory.registerOverlay(
+    function () { return document.getElementById('modalOverlay').classList.contains('ativo'); },
+    function () { fecharModal(); }
+  );
+}
+</script>
+</body>
+</html>

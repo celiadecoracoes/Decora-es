@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Espaço Celia Decorações</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Josefin Sans',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+      --gold:#c2185b;
+      --gold-light:#ff9ec4;
+      --black:#14050d;
+      --wine:#4a0f2e;
+      --white:#ffffff;
+      --gray:#d9d9d9;
+      --glass:rgba(255,255,255,0.07);
+    }
+
+    h1,h2,h3,h4,h5{
+      font-family:'Playfair Display',serif;
+    }
+
+    /* Trava a rolagem horizontal: impede que qualquer elemento
+       posicionado fora da tela arraste a página inteira pros lados. */
+    html {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body{
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(194,24,91,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 5%,  rgba(255,158,196,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 50% 90%, rgba(255,111,165,0.20) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 60% at 90% 50%, rgba(74,15,46,0.80) 0%, transparent 70%),
+        linear-gradient(170deg, #14050d 0%, #240a1a 40%, #2a0f1c 70%, #14050d 100%);
+      background-attachment:fixed;
+      color:var(--white);
+      overflow-x:hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    /* ===== HERO ===== */
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:
+      linear-gradient(rgba(20,5,13,.78),rgba(36,10,26,.78)),
+      url('espaço222.jfif') center/cover no-repeat;
+      z-index:-2;
+      transform:scale(1.1);
+      animation:zoom 18s infinite alternate;
+    }
+
+    @keyframes zoom{
+      from{transform:scale(1.1);}
+      to{transform:scale(1.25);}
+    }
+
+    .glow{
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:radial-gradient(circle,var(--gold),transparent 70%);
+      opacity:.12;
+      border-radius:50%;
+      filter:blur(40px);
+      animation:float 8s infinite ease-in-out;
+    }
+
+    .glow:nth-child(1){
+      top:-120px;
+      left:-100px;
+    }
+
+    .glow:nth-child(2){
+      bottom:-100px;
+      right:-100px;
+      animation-delay:2s;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0px);}
+      50%{transform:translateY(30px);}
+    }
+
+    .hero-content{
+      max-width:1000px;
+      z-index:2;
+      animation:fadeUp 1.2s ease;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(50px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0px);
+      }
+    }
+
+.hero h1{
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+
+  background: linear-gradient(135deg, #fff 0%, var(--gold) 50%, var(--gold-light) 100%);
+  background-size: 200% 100%;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 30px rgba(194, 24, 91, 0.25);
+  animation: titleShimmer 4s ease-in-out infinite;
+}
+
+@keyframes titleShimmer{
+  0%,100%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+}
+
+    .hero p{
+      font-size:1.2rem;
+      color:#f1f1f1;
+      line-height:1.8;
+      max-width:850px;
+      margin:auto;
+    }
+
+    .luxury-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-top:35px;
+      padding:16px 35px;
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      color:#111;
+      border:none;
+      border-radius:60px;
+      font-weight:700;
+      font-size:1rem;
+      text-decoration:none;
+      transition:.4s;
+      box-shadow:0 0 25px rgba(212,175,55,.4);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .luxury-btn::before{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+      left:-100%;
+      transition:.6s;
+    }
+
+    .luxury-btn:hover::before{
+      left:100%;
+    }
+
+    .luxury-btn:hover{
+      transform:translateY(-5px) scale(1.03);
+      box-shadow:0 0 40px rgba(212,175,55,.6);
+    }
+
+    /* ===== CATALOGO ===== */
+
+    .section{
+      padding:90px 20px;
+      max-width:1400px;
+      margin:auto;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .title h2{
+      font-size:3rem;
+      color:var(--gold-light);
+      margin-bottom:15px;
+    }
+
+    .title p{
+      color:#ddd;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    .catalogo{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      position:relative;
+      border-radius:28px;
+      overflow:hidden;
+      min-height:430px;
+      cursor:pointer;
+      background:#1c0a13;
+      border:1px solid rgba(255,255,255,.1);
+      transition:.5s;
+      box-shadow:0 10px 30px rgba(0,0,0,.4);
+    }
+
+    .card:hover{
+      transform:translateY(-12px) scale(1.02);
+      box-shadow:0 20px 60px rgba(212,175,55,.25);
+    }
+
+    .card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:1s;
+    }
+
+    .card:hover img{
+      transform:scale(1.12);
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,.95),rgba(0,0,0,.15));
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:30px;
+    }
+
+    .overlay h3{
+      font-size:1.7rem;
+      margin-bottom:10px;
+      color:var(--gold-light);
+    }
+
+    .overlay p{
+      color:#e9e9e9;
+      line-height:1.6;
+      font-size:.95rem;
+    }
+
+    /* ===== INFO ===== */
+
+    .info-box{
+      margin-top:80px;
+      background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:35px;
+      padding:50px 35px;
+      backdrop-filter:blur(12px);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .info-box::before{
+      content:'';
+      position:absolute;
+      width:250px;
+      height:250px;
+      background:radial-gradient(circle,var(--gold),transparent 70%);
+      top:-80px;
+      right:-80px;
+      opacity:.12;
+    }
+
+    .info-box h3{
+      font-size:2rem;
+      margin-bottom:25px;
+      color:var(--gold-light);
+    }
+
+    .beneficios{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .beneficio{
+      background:rgba(255,255,255,.05);
+      border-radius:18px;
+      padding:18px;
+      transition:.4s;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .beneficio:hover{
+      transform:translateY(-6px);
+      background:rgba(212,175,55,.12);
+    }
+
+    .beneficio span{
+      display:block;
+      font-size:1.05rem;
+      font-weight:600;
+    }
+
+    .valor{
+      margin-top:40px;
+      text-align:center;
+      background:linear-gradient(135deg,var(--wine),#9d1538);
+      border-radius:25px;
+      padding:30px;
+      box-shadow:0 0 40px rgba(110,13,37,.5);
+    }
+
+    .valor h4{
+      font-size:1.5rem;
+      margin-bottom:10px;
+    }
+
+    .valor strong{
+      font-size:3rem;
+      color:var(--gold-light);
+    }
+
+    /* ===== WHATSAPP ===== */
+
+    .whats-grid{
+      margin-top:60px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:25px;
+    }
+
+    .whats-card{
+      background:linear-gradient(145deg,#141414,#1d1d1d);
+      border-radius:25px;
+      padding:30px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.4s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .whats-card::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg,transparent,rgba(212,175,55,.12),transparent);
+      transform:translateX(-100%);
+      transition:1s;
+    }
+
+    .whats-card:hover::before{
+      transform:translateX(100%);
+    }
+
+    .whats-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,.4);
+    }
+
+    .whats-card h5{
+      font-size:1.4rem;
+      color:var(--gold-light);
+      margin-bottom:12px;
+    }
+
+    .whats-card p{
+      color:#ddd;
+      margin-bottom:25px;
+      line-height:1.6;
+    }
+
+    .btn-whats{
+      display:inline-block;
+      text-decoration:none;
+      background:linear-gradient(135deg,#00c853,#00e676);
+      color:#fff;
+      padding:14px 28px;
+      border-radius:50px;
+      font-weight:700;
+      transition:.4s;
+      box-shadow:0 0 25px rgba(0,230,118,.3);
+    }
+
+    .btn-whats:hover{
+      transform:scale(1.08);
+      box-shadow:0 0 35px rgba(0,230,118,.6);
+    }
+
+    /* ===== INTERAÇÃO FINAL ===== */
+
+    .final{
+      margin-top:100px;
+      text-align:center;
+      position:relative;
+      padding:100px 20px;
+    }
+
+    .circle{
+      width:320px;
+      height:320px;
+      margin:auto;
+      border-radius:50%;
+      background:radial-gradient(circle,var(--gold-light),transparent 70%);
+      opacity:.18;
+      animation:pulse 3s infinite;
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      top:40px;
+      filter:blur(10px);
+    }
+
+    @keyframes pulse{
+      0%{transform:translateX(-50%) scale(1);}
+      50%{transform:translateX(-50%) scale(1.2);}
+      100%{transform:translateX(-50%) scale(1);}
+    }
+
+    .final h2{
+      position:relative;
+      font-size:3rem;
+      z-index:2;
+      color:var(--gold-light);
+      margin-bottom:20px;
+    }
+
+    .final p{
+      position:relative;
+      z-index:2;
+      max-width:750px;
+      margin:auto;
+      color:#eee;
+      line-height:2;
+      margin-bottom:40px;
+    }
+
+    .particles{
+      position:absolute;
+      width:100%;
+      height:100%;
+      inset:0;
+      overflow:hidden;
+      pointer-events:none;
+    }
+
+    .particle{
+      position:absolute;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--gold-light);
+      animation:particle 8s linear infinite;
+      opacity:.6;
+    }
+
+    @keyframes particle{
+      from{
+        transform:translateY(100vh) scale(0);
+      }
+      to{
+        transform:translateY(-120px) scale(1.4);
+      }
+    }
+
+    .back-btn{
+      position:relative;
+      z-index:3;
+      margin-top:30px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#aaa;
+      border-top:1px solid rgba(255,255,255,.08);
+      margin-top:60px;
+      font-size:.95rem;
+    }
+
+    /* ===== RESPONSIVO ===== */
+
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      .title h2,
+      .final h2{
+        font-size:2.3rem;
+      }
+
+      .valor strong{
+        font-size:2.4rem;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .hero{
+        padding-top:120px;
+      }
+
+      .hero h1{
+        font-size:2.3rem;
+      }
+
+      .hero p{
+        font-size:1rem;
+      }
+
+      .title h2,
+      .final h2{
+        font-size:2rem;
+      }
+
+      .info-box{
+        padding:35px 20px;
+      }
+
+      .card{
+        min-height:350px;
+      }
+
+      .valor strong{
+        font-size:2rem;
+      }
+
+    }
+
+    /* ===== LIGHTBOX (VISUALIZAÇÃO EM TELA CHEIA) ===== */
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      width:100%;
+      height:100%;
+      background:rgba(10,3,7,0.94);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .3s ease;
+      padding:24px;
+    }
+
+    .lightbox.ativo{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .lightbox-conteudo{
+      position:relative;
+      max-width:92vw;
+      max-height:88vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      transform:scale(.92);
+      transition:transform .3s ease;
+    }
+
+    .lightbox.ativo .lightbox-conteudo{
+      transform:scale(1);
+    }
+
+    .lightbox-conteudo img{
+      max-width:92vw;
+      max-height:88vh;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+      border-radius:12px;
+      box-shadow:0 0 60px rgba(194,24,91,0.35);
+      display:block;
+    }
+
+    .lightbox-fechar{
+      position:fixed;
+      top:20px;
+      right:24px;
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.25);
+      color:var(--white);
+      font-size:24px;
+      line-height:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      cursor:pointer;
+      z-index:10000;
+      transition:background .25s ease, transform .25s ease;
+    }
+
+    .lightbox-fechar:hover{
+      background:var(--gold);
+      transform:rotate(90deg);
+    }
+
+    .card img{
+      cursor:zoom-in;
+    }
+
+    @media(max-width:600px){
+      .lightbox{
+        padding:12px;
+      }
+      .lightbox-conteudo img{
+        max-width:96vw;
+        max-height:80vh;
+      }
+      .lightbox-fechar{
+        top:14px;
+        right:14px;
+        width:40px;
+        height:40px;
+        font-size:20px;
+      }
+    }
+  </style>
+<!-- ══════════ PWA — INSTALAÇÃO COMO APLICATIVO ══════════ -->
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="./produtos/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./produtos/favicon-16x16.png">
+<link rel="apple-touch-icon" href="./produtos/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Celia Decorações">
+</head>
+<body>
+<script src="./pwa-install.js" defer></script>
+<script src="./nav-history.js"></script>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="glow"></div>
+    <div class="glow"></div>
+
+    <div class="hero-content">
+      <h1>Espaço Celia Decorações</h1>
+
+      <p>
+        Elegância, conforto, diversão e uma experiência inesquecível para sua festa.
+        Um espaço sofisticado e preparado para aniversários, confraternizações,
+        eventos familiares e momentos especiais com muito luxo, estilo e diversão.
+      </p>
+
+      <a href="javascript:void(0)" class="luxury-btn" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">
+        Conhecer o Espaço
+      </a>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section class="section" id="catalogo">
+
+    <div class="title">
+      <h2>Nosso Espaço</h2>
+      <p>
+        Cada detalhe foi preparado para transformar sua comemoração em um momento incrível,
+        com estrutura completa, ambiente aconchegante e clima perfeito para festas.
+      </p>
+    </div>
+
+    <div class="catalogo">
+
+      <div class="card">
+        <img src="./produtos/espaço222.jfif" alt="Área Coberta">
+        <div class="overlay">
+          <h3>Área Coberta</h3>
+          <p>
+            Ambiente elegante com espaço amplo para mesas, música,
+            confraternizações e momentos especiais.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./produtos/picina.jfif" alt="Piscina">
+        <div class="overlay">
+          <h3>Piscinas</h3>
+          <p>
+            Estrutura incrível com piscinas para adultos e crianças,
+            trazendo diversão e lazer para toda a família.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./produtos/areaaberta.jpeg" alt="Playground">
+        <div class="overlay">
+          <h3>Área Aberta</h3>
+          <p>
+            Amplo espaço ao ar livre com piscina integrada, pronto para os seus melhores dias de lazer.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./produtos/Churrasco.jpeg" alt="Área Gourmet">
+        <div class="overlay">
+          <h3>Área Gourmet</h3>
+          <p>
+            Espaço perfeito para churrascos, drinks e momentos inesquecíveis
+            com amigos e familiares.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CHAMADA PARA PROMOÇÕES -->
+    <div class="final">
+
+      <div class="circle"></div>
+
+      <div class="particles" id="particles"></div>
+
+      <h2>Você Sonha, Nós Realizamos</h2>
+
+      <p>
+        Você sonha e nós realizamos tudo em um só lugar! Como somos especialistas
+        em decoração, trabalhamos com prioridade máxima em nossos pacotes completos
+        (espaço com piscina, mesas, cadeiras e projeto decorativo incluso), não
+        fazendo o aluguel somente da área física. Quer facilidade e beleza para a
+        sua data? Acesse agora as promoções deste mês para mais informações!
+      </p>
+
+      <a href="./promocao.html" class="luxury-btn">
+        🔥 Promoções Mês
+      </a>
+
+      <a href="./telainicial.html" class="luxury-btn back-btn">
+        Voltar para Tela Inicial
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-fechar" id="lightboxFechar" aria-label="Fechar imagem">&times;</button>
+    <div class="lightbox-conteudo">
+      <img src="" alt="" id="lightboxImg">
+    </div>
+  </div>
+
+  <footer>
+    © 2026 - Espaço Celia Decorações • Elegância e Sofisticação em Cada Evento
+  </footer>
+
+  <script>
+
+    // ===== PARTÍCULAS =====
+
+    const particles = document.getElementById('particles');
+
+    for(let i = 0; i < 40; i++){
+
+      const particle = document.createElement('span');
+      particle.classList.add('particle');
+
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDuration = (Math.random() * 5 + 4) + 's';
+      particle.style.opacity = Math.random();
+      particle.style.width = particle.style.height = (Math.random() * 6 + 4) + 'px';
+
+      particles.appendChild(particle);
+    }
+
+    // ===== EFEITO SCROLL =====
+
+    const cards = document.querySelectorAll('.card, .whats-card, .beneficio');
+
+    const observer = new IntersectionObserver((entries)=>{
+
+      entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0px)';
+
+        }
+
+      });
+
+    },{
+      threshold:0.2
+    });
+
+    cards.forEach((card)=>{
+
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(50px)';
+      card.style.transition = '.8s';
+
+      observer.observe(card);
+
+    });
+
+
+    // ===== LIGHTBOX (ABRIR IMAGEM EM TELA CHEIA) =====
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxFechar = document.getElementById('lightboxFechar');
+    const cardsGaleria = document.querySelectorAll('.catalogo .card');
+
+    let lightboxAberto = false;
+    function abrirLightbox(src, alt){
+
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.classList.add('ativo');
+      document.body.style.overflow = 'hidden';
+      lightboxAberto = true;
+    }
+
+    function fecharLightboxVisual(){
+      lightbox.classList.remove('ativo');
+      document.body.style.overflow = '';
+      lightboxAberto = false;
+    }
+
+    // Usado pelo "X", clique fora da imagem e tecla Esc
+    function fecharLightbox(){
+      if(!lightboxAberto) return;
+      fecharLightboxVisual();
+    }
+
+    cardsGaleria.forEach((card)=>{
+      card.addEventListener('click', ()=>{
+        const img = card.querySelector('img');
+        if(img){
+          abrirLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+        }
+      });
+    });
+
+    lightboxFechar.addEventListener('click', ()=>{
+      fecharLightbox();
+    });
+
+    lightbox.addEventListener('click', (evento)=>{
+      if(evento.target === lightbox){
+        fecharLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (evento)=>{
+      if(evento.key === 'Escape' && lightboxAberto){
+        fecharLightbox();
+      }
+    });
+
+    /* ── Botão físico/gesto de voltar do celular ──
+       Registra o lightbox como overlay: se estiver aberto, o voltar
+       apenas o fecha. O restante é tratado pelo nav-history.js. */
+    if (window.CDNavHistory) {
+      window.CDNavHistory.registerOverlay(
+        function () { return lightboxAberto; },
+        function () { fecharLightboxVisual(); }
+      );
+    }
+  </script>
+
+</body>
+</html>
